@@ -1,0 +1,90 @@
+// Default
+@import "../scss/config/variables";
+@import "../scss/config/reset";
+
+//Components
+@import "../scss/components/header.scss";
+@import "../scss/components/footer.scss";
+@import "../scss/components/video.scss";
+@import "../scss/components/shared.scss";
+@import "../scss/components/forms.scss";
+@import "../scss/components/social-login.scss";
+@import "../scss/components/video-player.scss";
+
+//Screens
+@import "../scss/screens/home.scss";
+@import "../scss/screens/search.scss";
+@import "../scss/screens/user-profile.scss";
+@import "../scss/screens/edit-profile.scss";
+@import "../scss/screens/upload.scss";
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: $bg;
+  color: white;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+
+@keyframes goAway{
+  from{
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    translateY:(-50px);
+    opacity: 0;
+  }
+}
+
+.message {
+  position: absolute;
+  top: 10px;
+  left: 0; 
+  right: 0;
+  margin : 0 auto;
+  max-width: 200px;
+  padding: 10px 20px;
+  animation: goAway .5s forwards;
+  animation-delay: .5s;
+
+  &.error{
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+  }
+  &.success{
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+  }
+}
+.video__comment{
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 10px auto;
+  .video__comment--text{
+    background-color: rgba(255,255,255, 0.1);
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    padding : 10px 20px;
+    margin-bottom: 10px; 
+    border-radius: 10px;
+  }
+}

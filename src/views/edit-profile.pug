@@ -1,0 +1,18 @@
+extends base
+
+block content 
+  
+  form(method="POST" enctype="multipart/form-data").edit--profile__form
+    label(for="avatar") Avatar
+    input(name="avatar", type="file", id="avatar", accept="image/*")
+    input(name="name", type="text", placeholder="name", value=loggedInUser.name)
+    input(name="username", type="text", placeholder="username" value=loggedInUser.username)
+    input(name="email"  type="email" placeholder="email" value=loggedInUser.email)
+    input(name="location", type="text", placeholder="location" value=loggedInUser.location)
+    input(type="submit" value="Update Profile")
+    hr
+    if !loggedInUser.githubLoginOnly
+        div.edit--profile__password
+          a(href="change-password") Change Password &rarr;
+    else 
+        h5="SNS 로그인 된 경우 패스워드를 변경할 수 없습니다."

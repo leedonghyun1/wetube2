@@ -1,0 +1,16 @@
+mixin video(video)
+      //-  경로에 "/"가 없으면 루트에서 찾아가지 않고 현 폴더에서부터 뒤에 경로로 찾아감.
+      a(href=`/videos/${video.id}`).video-mixin
+        div.video-mixin__thumb(style=`background-image:url(${video.thumbUrl});background-size:cover;background-position:center`)
+        div.video-mixin__data
+            span.video-mixin__title=video.title
+            div.video-mixin__meta
+                span #{video.owner.name} *
+                span #{video.meta.views} views
+
+        //- p=video.description
+        //- ul
+        //-   each hashtag in video.hashtags
+        //-     span=hashtag
+        //- small=video.createdAt
+        //- hr

@@ -1,0 +1,38 @@
+@import "../config/variables";
+
+header {
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__logo {
+    color: rgb(67, 170, 124);
+    font-size: 55px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    li {
+      margin-left: 25px;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    i{
+      font-size: 16px;
+    }
+  }
+  .header__btn{
+    background-color: white;
+    color: $bg;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .header__avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+}
