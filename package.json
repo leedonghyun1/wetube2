@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "The best way to watch video",
   "scripts": {
-    "dev:server": "nodemon",
-    "dev:assets": "webpack --mode=development -w",
+    "start":"node build/init.js",
+    "build":"npm run build:server && npm run build:assets",
     "build:server": "babel src -d build",
     "build:assets": "webpack --mode=production",
-    "build":"npm run build:server && npm run build:assets",
-    "start":"node build/init.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --mode=development -w"
   },
   "repository": {
     "type": "git",
