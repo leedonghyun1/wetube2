@@ -18,7 +18,7 @@ header
                 if loggedInUser.avatarUrl === ""
                     span
                 else
-                    if loggedInUser.githubLoginOnly
+                    if loggedInUser.avatarUrl.includes("github");
                         img.header__avatar(src=loggedInUser.avatarUrl)
                     else 
                         img.header__avatar(src="/" + loggedInUser.avatarUrl)
