@@ -1,4 +1,18 @@
 import multer from "multer";
+import multerS3 from "multer-s3";
+import aws from "aws-sdk";
+
+const s3 = new aws.S3({
+  credentials : {
+    accessKeyId: process.env.AWS_ID,
+    secretAccessKey: process.env.AWS_PASSWORD
+  },
+});
+
+const multerUploader = multerS3({
+  s3: s3,
+  bucket: 'momawetube',
+});
 
 export const localsMiddelware = (req, res, next) => {
 
@@ -25,7 +39,7 @@ export const publicOnlyMiddelware = (req, res, next) => {
     req.flash("error","Not authorized");
     return res.redirect("/");
   }
-}
+};
 
 
 export const avatarUpload = multer({
@@ -33,6 +47,7 @@ export const avatarUpload = multer({
   limits: {
     fileSize: 5000000,
   },
+  storage: multerUploader,  
 });
 
 export const videoUpload = multer({
@@ -40,4 +55,5 @@ export const videoUpload = multer({
   limits: {
     fileSize: 20000000,
   },
+  storage: multerUploader,
 });
