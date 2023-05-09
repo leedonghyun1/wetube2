@@ -12,6 +12,7 @@ const s3 = new aws.S3({
 const multerUploader = multerS3({
   s3: s3,
   bucket: 'momawetube',
+  acl: "public-read",
 });
 
 export const localsMiddelware = (req, res, next) => {
