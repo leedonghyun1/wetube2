@@ -1,13 +1,25 @@
 @import "../config/variables";
 
+@keyframes moveHeaderLogo {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
 header {
   padding: 10px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+
+
   .header__logo {
-    color: rgb(67, 170, 124);
+    color: rgb(0, 145, 230);
     font-size: 55px;
+    animation: moveHeaderLogo 1s ;
   }
   ul {
     display: flex;

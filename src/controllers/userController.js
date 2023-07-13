@@ -79,7 +79,6 @@ export const finishGithubLogin = async (req, res) => {
   const params = new URLSearchParams(config).toString()
   const finalUrl = `${baseUrl}?${params}`;
 
-
   const tokenRequest = await (
     await fetch(finalUrl, {
       method: "POST",
@@ -128,6 +127,7 @@ export const finishGithubLogin = async (req, res) => {
     else {
       req.session.loggedIn = true;
       req.session.user = user;
+      req.flash("success",`안녕하세요, ${req.session.user.username} 님`);
       return res.redirect("/login")
     }
   } else {
